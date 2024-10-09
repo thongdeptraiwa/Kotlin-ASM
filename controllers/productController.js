@@ -3,6 +3,7 @@ const products = require("../models/product");
 module.exports = {
     addPoduct,
     getProductCate,
+    getProduct,
     getAllProducts,
     deleteProduct,
 }
@@ -21,10 +22,21 @@ async function addPoduct(body) {
     }
 }
 
-async function getProductCate() {
+async function getProductCate(query) {
     try {
-        const { idCate } = body;
+        const { idCate } = query;
         const result = await products.find({ "idCate": idCate });
+        return result;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
+async function getProduct(query) {
+    try {
+        const { id } = query;
+        const result = await products.findById(id);
         return result;
     } catch (error) {
         console.log(error);

@@ -10,11 +10,13 @@ var cors = require('cors')
 const mongoose = require("mongoose");
 require("./models/user.js");
 require("./models/category");
+require("./models/product");
 
 var indexRouter = require('./routes/index');
 //mogo
 var userRoute = require('./routes/userRoute');
 var categoryRoute = require('./routes/categoryRoute');
+var productRoute = require('./routes/productRoute');
 
 var app = express();
 
@@ -52,6 +54,7 @@ app.use('/', indexRouter);
 //mogo
 app.use('/user', userRoute);
 app.use('/cate', categoryRoute);
+app.use('/product', productRoute);
 
 
 // // catch 404 and forward to error handler
