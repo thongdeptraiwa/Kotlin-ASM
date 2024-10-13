@@ -35,7 +35,7 @@ router.post('/addUser', async function (req, res, next) {
     if (result) {
       res.status(200).json({ "status": true, "message": "Đăng kí thành công" });
     } else {
-      res.status(401).json({ "status": false, "message": "Tài khoản đã tồn tại" });
+      res.status(201).json({ "status": false, "message": "Tài khoản đã tồn tại" });
     }
 
   } catch (e) {
