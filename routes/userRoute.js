@@ -53,10 +53,10 @@ router.post('/login', async function (req, res, next) {
       res.status(200).json({ "status": true, "message": result.message });
     } else if (result.status == 401) {
       //sai tài khoản 
-      res.status(401).json({ "status": false, "message": result.message });
+      res.status(201).json({ "status": false, "message": result.message });
     } else if (result.status == 402) {
       //sai mật khẩu 
-      res.status(402).json({ "status": false, "message": result.message });
+      res.status(202).json({ "status": false, "message": result.message });
     }
   } catch (e) {
     res.status(400).json({ "status": false, "message": "lỗi" });

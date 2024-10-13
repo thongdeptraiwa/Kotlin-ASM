@@ -25,7 +25,7 @@ async function addPoduct(body) {
 async function getProductCate(query) {
     try {
         const { idCate } = query;
-        const result = await products.find({ "idCate": idCate });
+        const result = await products.find({ "idCate": idCate }, " -__v");
         return result;
     } catch (error) {
         console.log(error);
@@ -36,7 +36,7 @@ async function getProductCate(query) {
 async function getProduct(query) {
     try {
         const { id } = query;
-        const result = await products.findById(id);
+        const result = await products.findById(id, " -__v");
         return result;
     } catch (error) {
         console.log(error);

@@ -17,7 +17,7 @@ router.post('/addProduct', async function (req, res, next) {
     if (result) {
       res.status(200).json({ "status": true, "message": "add thành công" });
     } else {
-      res.status(401).json({ "status": false, "message": "add thất bại" });
+      res.status(201).json({ "status": false, "message": "add thất bại" });
     }
 
   } catch (e) {
@@ -31,7 +31,7 @@ router.get('/getProductCate', async function (req, res, next) {
   try {
     const query = req.query;
     const list = await productController.getProductCate(query);
-    res.status(200).json({ "status": true, "products": list });
+    res.status(200).json(list);
   } catch (e) {
     res.status(400).json({ "status": false, "message": "lỗi" });
   }
@@ -70,7 +70,7 @@ router.post('/delete', async function (req, res, next) {
     if (result) {
       res.status(200).json({ "status": true, "mess": "delete thành công" });
     } else {
-      res.status(401).json({ "status": false, "mess": "Không tìm thấy user" });
+      res.status(201).json({ "status": false, "mess": "Không tìm thấy user" });
     }
 
   } catch (e) {

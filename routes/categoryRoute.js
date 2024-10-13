@@ -16,7 +16,7 @@ router.post('/addCate', async function (req, res, next) {
     if (result) {
       res.status(200).json({ "status": true, "message": "add thành công" });
     } else {
-      res.status(401).json({ "status": false, "message": "nameCate đã tồn tại" });
+      res.status(201).json({ "status": false, "message": "nameCate đã tồn tại" });
     }
 
   } catch (e) {
@@ -45,7 +45,7 @@ router.post('/deleteCate', async function (req, res, next) {
     if (result) {
       res.status(200).json({ "status": true, "mess": "delete thành công" });
     } else {
-      res.status(401).json({ "status": false, "mess": "Không tìm thấy cate" });
+      res.status(201).json({ "status": false, "mess": "Không tìm thấy cate" });
     }
 
   } catch (e) {
